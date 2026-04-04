@@ -5,20 +5,20 @@
 waitForElement(['img[src="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"]'], (imgs) => {
   for (const img of document.querySelectorAll('img[src="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"]')) {
     img.removeAttribute("srcset");
-    img.setAttribute("src", "https://raw.githubusercontent.com/4ramcarlosf1-creator/SpicetifyFurina/main/assets/Purple/liked_songs.png");
+    img.setAttribute("src", "https://raw.githubusercontent.com/4ramcarlosf1-creator/SpicetifyIuno/main/assets/Purple/liked_songs.png");
   }
 });
 
 const likedObserver = new MutationObserver(() => {
   for (const img of document.querySelectorAll('img[src="https://misc.scdn.co/liked-songs/liked-songs-300.jpg"]')) {
     img.removeAttribute("srcset");
-    img.setAttribute("src", "https://raw.githubusercontent.com/4ramcarlosf1-creator/SpicetifyFurina/main/assets/Purple/liked_songs.png");
+    img.setAttribute("src", "https://raw.githubusercontent.com/4ramcarlosf1-creator/SpicetifyIuno/main/assets/Purple/liked_songs.png");
   }
 });
 likedObserver.observe(document.body, { childList: true, subtree: true });
 
 waitForElement([".Root__top-container"], ([el]) => {
-  el.style.backgroundImage = "url(\"https://raw.githubusercontent.com/4ramcarlosf1-creator/SpicetifyFurina/main/assets/Purple/background.png\")";
+  el.style.backgroundImage = "url(\"https://raw.githubusercontent.com/4ramcarlosf1-creator/SpicetifyIuno/assets/Purple/background.png\")";
 })
 
 /**
