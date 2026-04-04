@@ -1,0 +1,305 @@
+/* =====================================================
+   SpicetifyFurina — by Café
+   github.com/4ramcarlosf1-creator/SpicetifyFurina
+   =====================================================
+
+   CONFIGURACIÓN GLOBAL — edita solo esta sección
+   para cambiar colores, fondo y opacidades
+   ===================================================== */
+
+:root {
+    /* ── Imágenes ── */
+    --furina-bg:       url("https://raw.githubusercontent.com/4ramcarlosf1-creator/SpicetifyFurina/main/assets/Purple/background.png");
+
+    /* ── Colores principales ── */
+    --furina-acento:        #5961CE;
+    --furina-acento-hover:  #7B84E8;
+    --furina-glow:          #BAC0F2;
+    --furina-blanco:        #FDFCFF;
+
+    /* ── Opacidades de superficies ── */
+    --furina-op-base:    0.55;  /* fondo de paneles */
+    --furina-op-card:    0.70;  /* tarjetas */
+    --furina-op-alta:    0.65;  /* superficies elevadas */
+    --furina-op-hover:   0.18;  /* hover de filas */
+    --furina-op-inactivo: 0.45; /* íconos inactivos */
+}
+
+/* ── Superficies derivadas de las variables anteriores ── */
+* {
+    --spice-main-elevated:      rgba(20, 18, 35, var(--furina-op-base));
+    --spice-card:               rgba(26, 28, 53, var(--furina-op-card));
+    --spice-highlight-elevated: rgba(50, 53, 106, var(--furina-op-alta));
+}
+
+/* ── Fondo principal ── */
+.Root__top-container {
+    background-image: var(--furina-bg) !important;
+}
+
+.Root__top-container {
+    background-color: unset !important;
+    background-size: cover;
+}
+
+.Root__top-container:has(#VideoPlayerCinema_ReactPortal) {
+    padding: 0;
+}
+
+/* Do not display background elements when fullscreen lyrics */
+#main:has(#VideoPlayerCinema_ReactPortal) {
+
+    & .Root__main-view,
+    .Root__right-sidebar,
+    .Root__nav-bar {
+        display: none !important;
+    }
+
+    /* .Root__globalNav {
+        background: black !important;
+    } */
+}
+
+/* Do not display main view when expanded library */
+#main:not(:has(#Desktop_LeftSidebar_Id > .LayoutResizer__resize-bar)) .Root__main-view {
+    display: none !important;
+}
+
+:has([data-overlayscrollbars-initialize="true"]):has(#VideoPlayerCinema_ReactPortal) {
+    outline: none !important;
+}
+
+/* Cursor de la barra de progreso — estrella/cristal inspirado en la espada de Furina */
+.x-progressBar-handle {
+    transform: translate(-50%, -50%) !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #FDFCFF 0%, #BAC0F2 40%, #5961CE 100%) !important;
+    box-shadow: 0 0 8px 3px rgba(121, 132, 232, 0.7), 0 0 2px 1px #FDFCFF;
+    display: flex;
+}
+
+/* Barra de progreso — gradiente azul nocturno inspirado en Furina */
+.x-progressBar-foreground {
+    background-color: transparent !important;
+    background-image: linear-gradient(90deg,
+            rgba(26, 51, 118, 1)   0%,
+            rgba(50, 53, 106, 1)  20%,
+            rgba(89, 97, 206, 1)  50%,
+            rgba(123, 132, 232, 1) 75%,
+            rgba(186, 192, 242, 1) 90%,
+            rgba(253, 252, 255, 1) 100%);
+}
+
+/* Global */
+.Root__globalNav,
+
+/* Top bar */
+.Root__nav-bar,
+
+.main-entityHeader-container>*,
+.playlist-playlist-playlistContent,
+
+/* Playlist colored background */
+.main-entityHeader-backgroundColor,
+.playlist-playlist-actionBarBackground-background,
+.main-actionBarBackground-background,
+
+.Root__now-playing-bar>button,
+.lyrics-lyrics-background,
+.main-view-container__scroll-node-child>main>section>div>div:nth-child(2),
+.Bdcf5g__Rug3TGqSdbiy,
+
+.Root__now-playing-bar,
+/* Sidebar left your library */
+#Desktop_LeftSidebar_Id,
+.YourLibraryX,
+.main-yourLibraryX-libraryRootlist [role="presentation"],
+.main-yourLibraryX-libraryRootlist [aria-rowindex="1"],
+
+#Desktop_PanelContainer_Id::before,
+.main-home-homeHeader,
+.main-view-container__scroll-node-child>*>*,
+.artist-artistDiscography-headerContainer,
+.main-view-container__scroll-node-child>main>section>div:last-child,
+.search-searchCategory-contentArea::after,
+.main-nowPlayingView-contextItemInfo::before,
+.Box-group-naked-listRow-isInteractive-hasLeadingOrMedia-draggable-minBlockSize_56px,
+
+/* Artist page colored background */
+.main-view-container .before-scroll-node>*>:last-child,
+.main-view-container .before-scroll-node>*>:last-child:after,
+
+/* Fullscreen artist page on playing music */
+/* [data-overlayscrollbars-viewport="scrollbarHidden overflowXHidden overflowYScroll"]>*>*>*>*>*:first-child, */
+
+/* Right sidebar for queue */
+.Root__right-sidebar>*,
+
+/* Fullscreen lyrics */
+[data-overlayscrollbars-initialize="true"]:has(#VideoPlayerCinema_ReactPortal),
+.lyrics-lyrics-container:first-child,
+:has(+.lyrics-lyrics-container),
+
+/* Spicetify marketplace */
+.marketplace-header
+
+/* Remove bg */
+    {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+.view-homeShortcutsGrid-shortcut,
+#Desktop_PanelContainer_Id,
+/* Sidebar left your library */
+.Root__main-view,
+.main-yourLibraryX-library,
+/* Filter tags */
+.ChipInnerComponent-sm {
+    background-color: var(--spice-main-elevated) !important;
+}
+
+/* Artist page gradient image */
+.main-view-container .before-scroll-node>*>:first-child {
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0));
+    position: absolute;
+}
+
+
+#Desktop_PanelContainer_Id {
+    border-radius: 8px;
+}
+
+
+[data-tippy-root] form {
+    --background-elevated-base: unset;
+}
+
+/* =====================================================
+   Hover y selección — enfoque global con variables Encore
+   ===================================================== */
+
+/* Las variables --encore-* son las que Spotify usa en TODA la app
+   independientemente de la vista (búsqueda, home, playlist, etc.) */
+:root {
+    /* Hover de cualquier fila/elemento interactivo */
+    --encore-highlight-color:              rgba(89, 97, 206, 0.18) !important;
+    --encore-highlight-color-hover:        rgba(89, 97, 206, 0.22) !important;
+    --encore-highlight-color-press:        rgba(89, 97, 206, 0.30) !important;
+
+    /* Variables legacy de Spicetify */
+    --spice-highlight:                     rgba(89, 97, 206, 0.18) !important;
+    --background-tinted-highlight:         rgba(89, 97, 206, 0.18) !important;
+    --background-tinted-press:             rgba(89, 97, 206, 0.30) !important;
+
+    /* Superficies elevadas (modales, menus, sidebar) */
+    --encore-elevated-base-color:          rgba(20, 18, 35, 0.75) !important;
+    --background-elevated-base:            rgba(20, 18, 35, 0.75) !important;
+    --encore-elevated-highlight-color:     rgba(26, 28, 53, 0.80) !important;
+
+    /* Base de listas y filas — debe ser transparente */
+    --encore-base-color:                   transparent !important;
+    --background-base:                     transparent !important;
+    --background-highlight:                rgba(89, 97, 206, 0.18) !important;
+    --background-press:                    rgba(89, 97, 206, 0.30) !important;
+}
+
+/* Capturar cualquier elemento con fondo negro sólido heredado */
+[style*="background-color: rgb(0"],
+[style*="background-color: #000"],
+[style*="background: rgb(0"] {
+    background-color: rgba(20, 18, 35, 0.65) !important;
+}
+
+/* Filas de tracklist en TODAS las vistas */
+.main-trackList-trackListRow,
+.tracklist-row,
+[data-testid="tracklist-row"],
+.search-searchCategory-SearchCategory,
+.collection-collectionEntityHeroRow-container {
+    background-color: transparent !important;
+}
+
+.main-trackList-trackListRow:hover,
+.tracklist-row:hover,
+[data-testid="tracklist-row"]:hover,
+.main-rootlist-rootlistItem:hover,
+.spicetify-playlist-list li:hover {
+    background-color: rgba(89, 97, 206, 0.18) !important;
+    backdrop-filter: blur(4px);
+}
+
+.main-trackList-trackListRow[aria-selected="true"],
+[data-testid="tracklist-row"][aria-selected="true"],
+.main-trackList-active {
+    background-color: rgba(89, 97, 206, 0.28) !important;
+    backdrop-filter: blur(4px);
+}
+
+/* Sidebar — items hover */
+.main-yourLibraryX-libraryRootlist [role="row"]:hover,
+.main-rootlist-rootlistItem:hover,
+.spicetify-playlist-list li:hover {
+    background-color: rgba(89, 97, 206, 0.18) !important;
+}
+
+/* Búsqueda — resultados al hover */
+.main-shelf-shelf:hover,
+[role="row"]:hover,
+[role="listitem"]:hover {
+    background-color: rgba(89, 97, 206, 0.15) !important;
+}
+
+/* Cualquier div/section con fondo sólido oscuro que tape el fondo */
+.main-view-container__scroll-node-child > * > * {
+    background-color: transparent !important;
+}
+
+/* Cards al hover */
+.view-homeShortcutsGrid-shortcut:hover,
+.main-card-card:hover {
+    background-color: rgba(50, 53, 106, 0.55) !important;
+    backdrop-filter: blur(6px);
+}
+
+/* Menú contextual y dropdowns */
+.main-contextMenu-menu,
+.encore-popover-container,
+[data-testid="context-menu"] {
+    background-color: rgba(14, 12, 26, 0.95) !important;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(89, 97, 206, 0.25) !important;
+}
+
+.main-contextMenu-menuItem:hover,
+[data-testid="context-menu"] li:hover {
+    background-color: rgba(89, 97, 206, 0.20) !important;
+}
+
+/* Dropdown búsquedas recientes */
+[data-testid="search-autocomplete-container"],
+.SearchAutocomplete,
+.x-searchInput-searchInputContainer ~ *,
+[role="listbox"],
+[role="listbox"] > *,
+[class*="autocomplete"],
+[class*="SearchSuggestions"],
+[class*="recentSearches"],
+[class*="typeahead"] {
+    background-color: rgba(20, 18, 45, 0.55) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(89, 97, 206, 0.25) !important;
+    border-radius: 8px !important;
+}
+
+/* Items dentro del dropdown */
+[data-testid="search-autocomplete-container"] [role="option"]:hover,
+[role="listbox"] [role="option"]:hover,
+[class*="recentSearches"] li:hover,
+[class*="SearchSuggestions"] li:hover {
+    background-color: rgba(89, 97, 206, 0.20) !important;
+}

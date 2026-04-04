@@ -1,0 +1,15 @@
+[
+    {
+        "name": "SpicetifyFurina",
+        "description": "Tema para Spotify inspirado en Furina de Genshin Impact — azules nocturnos, índigo y blanco glacial.",
+        "preview": "preview.png",
+        "usercss": "user.css",
+        "schemes": "color.ini",
+        "include": ["theme.js"],
+        "readme": "README.md",
+        "authors": [
+            { "name": "Café", "url": "https://github.com/4ramcarlosf1-creator" }
+        ],
+        "tags": ["furina", "genshin", "anime", "blue", "dark"]
+    }
+]
