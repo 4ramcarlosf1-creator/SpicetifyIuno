@@ -1,4 +1,4 @@
-# Furina Theme para Spicetify
+# Iuno Theme para Spicetify
 Tema personalizado para Spotify inspirado en Furina de Genshin Impact. 🎭
 
 > Preview:
